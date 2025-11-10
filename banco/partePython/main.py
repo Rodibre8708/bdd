@@ -364,7 +364,7 @@ def chamar_cadastrar_cliente():
     conn = None
     try:
         nome = input("Nome: ")
-        sexo = input("Sexo (m/f/o): ").lower()
+        sexo = input("Sexo (m/f/o): ").lower() 
         nasc = input("Data Nascimento (YYYY-MM-DD): ")
         
         conn = get_conexao_db()
@@ -377,8 +377,10 @@ def chamar_cadastrar_cliente():
         print(f"Cliente '{nome}' cadastrado com sucesso! ID: {cursor.lastrowid}")
 
     except Error as e:
-        print(f"Erro de SQL: {e}")
-        conn.rollback()
+        
+        print(f"Erro de SQL ao cadastrar: {e}") 
+        if conn and conn.is_connected():
+            conn.rollback()
     except Exception as e:
         print(f"Erro: {e}")
     finally:
