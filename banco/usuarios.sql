@@ -11,4 +11,3 @@ CREATE USER 'cadastrador'@'localhost' IDENTIFIED BY 'cad123';
 GRANT INSERT ON supermais.Cliente TO 'cadastrador'@'localhost';
 GRANT INSERT ON supermais.Produto TO 'cadastrador'@'localhost';
 
-FLUSH PRIVILEGES;
