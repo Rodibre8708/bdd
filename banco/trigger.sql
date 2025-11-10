@@ -72,7 +72,7 @@ BEGIN
 END$$ 
 DELIMITER ;
 
-
+ 
 DELIMITER $$
 CREATE TRIGGER Remove_cliente_especial
 AFTER UPDATE ON Cliente_Esp
